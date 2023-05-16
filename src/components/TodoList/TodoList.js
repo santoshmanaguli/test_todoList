@@ -4,16 +4,20 @@ export default{
         return{
             Tasks: [],
             createTasks: null,
-            count: 0
+            tasksList: [],
+            createFolder: null
         }
     },
     methods: {
         onAddTasks(){
-            console.log(1, this.createTasks);
-            let obj = {id: this.count + 1, task_name: this.createTasks, showIcon: true}
+            let obj = {task_name: this.createTasks, showIcon: true}
             this.Tasks.push(obj);
-            console.log(this.Tasks, obj);
             this.createTasks = null;
         },
+        addFolder(){
+            let obj1 = {folder_name: this.createFolder};
+            this.tasksList.push(obj1);
+            this.createFolder = null
+        }
     }
 }
