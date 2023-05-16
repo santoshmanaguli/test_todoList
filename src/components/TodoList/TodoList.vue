@@ -8,22 +8,22 @@
     </div>
     <div>
         <div class="dropdown">
-        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            My Tasks
-        </a>
+            <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                My Tasks
+            </a>
 
-        <ul class="dropdown-menu">
-            <form @submit.prevent="addFolder()">
-                <input type="text" v-model="createFolder" required />
-                <button type="submit">
-                    Add
-                </button>
-            </form>
-            <li v-for="(list, index) in tasksList" :key="index">
-                <a class="dropdown-item" href="#">{{ list.folder_name }}</a>
-            </li>
-        </ul>
-</div>
+            <ul class="dropdown-menu">
+                <form @submit.prevent="addFolder()">
+                    <input type="text" v-model="createFolder" required />
+                    <button type="submit">
+                        Add
+                    </button>
+                </form>
+                <li v-for="(list, index) in tasksList" :key="index">
+                    <a class="dropdown-item" href="#" @click="onChangeFolder()">{{ list.folder_name }}</a>
+                </li>
+            </ul>
+        </div>
     </div>
     <div>
         <form @submit.prevent="onAddTasks()">
@@ -34,7 +34,7 @@
         </form>
     </div>
     <div>
-        <div v-for="(i, index) in Tasks" :key="index">
+        <div class="tab-content" id="myTasks1" v-for="(i, index) in Tasks" :key="index">
             <i v-if="i.showIcon" class="bi bi-check2" role="button" @click="i.showIcon = false"></i>
             <i v-else class="bi bi-pencil-fill" role="button" @click="i.showIcon = true"></i>
             <span>

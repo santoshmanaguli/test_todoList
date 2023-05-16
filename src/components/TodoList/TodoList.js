@@ -10,14 +10,22 @@ export default{
     },
     methods: {
         onAddTasks(){
-            let obj = {task_name: this.createTasks, showIcon: true}
+            let obj = {
+                task_name: this.createTasks, 
+                showIcon: true
+            }
             this.Tasks.push(obj);
             this.createTasks = null;
         },
         addFolder(){
-            let obj1 = {folder_name: this.createFolder};
+            let obj1 = {
+                folder_name: this.createFolder,
+            };
             this.tasksList.push(obj1);
             this.createFolder = null
+        },
+        onChangeFolder(){
+            
         }
     }
 }
