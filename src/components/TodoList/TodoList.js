@@ -2,15 +2,22 @@ export default{
     name: 'TodoList',
     data() {
         return{
-            Tasks: [],
+            Tasks: [{
+                folder_name: 'My Tasks',
+                tasks: [{
+                    task_name: 'sample task',
+                    showIcon: true
+                }]
+            }],
             createTasks: null,
             tasksList: [],
-            createFolder: null
+            createFolder: null,
+            FolderName: 'MyTasks'
         }
     },
     methods: {
         onAddTasks(){
-            let obj = {
+            let obj = { 
                 task_name: this.createTasks, 
                 showIcon: true
             }
@@ -24,8 +31,8 @@ export default{
             this.tasksList.push(obj1);
             this.createFolder = null
         },
-        onChangeFolder(){
-            
+        onChangeFolder(obj){
+            console.log(obj); 
         }
     }
 }

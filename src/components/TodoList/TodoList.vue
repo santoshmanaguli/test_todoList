@@ -9,7 +9,7 @@
     <div>
         <div class="dropdown">
             <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                My Tasks
+                {{ FolderName }}
             </a>
 
             <ul class="dropdown-menu">
@@ -20,21 +20,19 @@
                     </button>
                 </form>
                 <li v-for="(list, index) in tasksList" :key="index">
-                    <a class="dropdown-item" href="#" @click="onChangeFolder()">{{ list.folder_name }}</a>
+                    <a class="dropdown-item" href="#" @click="onChangeFolder(list)">{{ list.folder_name }}</a>
                 </li>
             </ul>
         </div>
     </div>
-    <div>
         <form @submit.prevent="onAddTasks()">
             <input type="text" v-model="createTasks" placeholder="Enter Here..." required />
             <button type="submit">
                 Add a task
             </button>
         </form>
-    </div>
     <div>
-        <div class="tab-content" id="myTasks1" v-for="(i, index) in Tasks" :key="index">
+        <div id="myTasks1" v-for="i, index in Tasks" :key="index">
             <i v-if="i.showIcon" class="bi bi-check2" role="button" @click="i.showIcon = false"></i>
             <i v-else class="bi bi-pencil-fill" role="button" @click="i.showIcon = true"></i>
             <span>
