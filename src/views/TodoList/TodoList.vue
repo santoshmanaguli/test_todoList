@@ -19,7 +19,7 @@
                         Add
                     </button>
                 </form>
-                <li v-for="(list, index) in tasksList" :key="index">
+                <li v-for="(list, index) in Tasks" :key="index">
                     <a class="dropdown-item" href="#" @click="onChangeFolder(list)">{{ list.folder_name }}</a>
                 </li>
             </ul>
@@ -33,14 +33,18 @@
         </form>
     <div>
         <div id="myTasks1" v-for="i, index in Tasks" :key="index">
-            <i v-if="i.showIcon" class="bi bi-check2" role="button" @click="i.showIcon = false"></i>
-            <i v-else class="bi bi-pencil-fill" role="button" @click="i.showIcon = true"></i>
-            <span>
-                <s v-if="!i.showIcon">
-                    {{ i.task_name }}
-                </s>
-                <span v-else>{{ i.task_name }}</span>
-            </span>
+            <div v-if="i.folder_name == FolderName">
+                <div v-for="j,index1 in i.tasks" :key="index1">
+                    <i v-if="j.showIcon" class="bi bi-check2" role="button" @click="j.showIcon = false"></i>
+                    <i v-else class="bi bi-pencil-fill" role="button" @click="j.showIcon = true"></i>
+                    <span>
+                        <s v-if="!j.showIcon">
+                            {{ j.task_name }}
+                        </s>
+                        <span v-else>{{ j.task_name }}</span>
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
 </template>

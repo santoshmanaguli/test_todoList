@@ -1,5 +1,5 @@
 <script setup>
-import TodoList from "../src/components/TodoList/TodoList.vue"
+import TodoList from "../src/views/TodoList/TodoList.vue"
 </script>
 
 <template>

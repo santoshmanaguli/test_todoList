@@ -12,7 +12,7 @@ export default{
             createTasks: null,
             tasksList: [],
             createFolder: null,
-            FolderName: 'MyTasks'
+            FolderName: 'My Tasks'
         }
     },
     methods: {
@@ -21,18 +21,23 @@ export default{
                 task_name: this.createTasks, 
                 showIcon: true
             }
-            this.Tasks.push(obj);
+            for (let i = 0; i < this.Tasks.length; i++) {
+                if (this.Tasks[i].folder_name == this.FolderName) {
+                    this.Tasks[i].tasks.push(obj);
+                }
+            }
             this.createTasks = null;
         },
         addFolder(){
             let obj1 = {
                 folder_name: this.createFolder,
+                tasks: []
             };
-            this.tasksList.push(obj1);
-            this.createFolder = null
+            this.Tasks.push(obj1);
+            this.createFolder = null;
         },
         onChangeFolder(obj){
-            console.log(obj); 
+            this.FolderName = obj.folder_name;
         }
     }
 }
