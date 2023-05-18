@@ -1,5 +1,13 @@
-container{
-    margin: auto
+.container1{
+    width: 40rem;
+    padding: 100px;
+    border: 1px solid white;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 20px;
+    margin-top: 200px;
+    background-color: white;
+    height: 35rem;
 }
 
 .active{
@@ -8,4 +16,43 @@ container{
 
 .tab-content{
     display: none;
+}
+
+.inputBoxFolder{
+    padding-left: 5px;
+    border-radius: 10px;
+    border: 0.5px solid;
+    margin-left: 5px;
+}
+
+.addBtnFolder{
+    color: #1a73e8;
+}
+
+.inputBoxTask{
+    margin-top: 5px;
+    border-radius: 10px;
+    height: 40px;
+    border: 1px solid gray;
+    width: 75%;
+    padding-left: 10px;
+}
+
+.inputBoxTask:focus{
+    border-color: none;
+}
+
+.addTaskBtn{
+    color: #a64166;
+    font-size: 18px;
+}
+
+.folderNameStyle{
+    color: #1a73e8;
+    font-size: 17px;
+}
+
+.taskName{
+    margin-left: 10px;
+    font-size: 16px;
 }

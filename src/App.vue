@@ -6,5 +6,9 @@ import TodoList from "../src/views/TodoList/TodoList.vue"
   <TodoList />
 </template>
 
-<style scoped>
+<style>
+html, #app {
+  background-color: #E6425E;
+  font-family: serif;
+}
 </style>
