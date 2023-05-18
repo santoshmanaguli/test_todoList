@@ -6,7 +6,7 @@ export default{
                 folder_name: 'My Tasks',
                 tasks: [{
                     task_name: 'sample task',
-                    showIcon: true
+                    showIcon: false
                 }]
             }],
             createTasks: null,
@@ -19,7 +19,7 @@ export default{
         onAddTasks(){
             let obj = { 
                 task_name: this.createTasks, 
-                showIcon: true
+                showIcon: false
             }
             for (let i = 0; i < this.Tasks.length; i++) {
                 if (this.Tasks[i].folder_name == this.FolderName) {

@@ -10,7 +10,8 @@
             </div>
             <div>
                 <div class="dropdown">
-                    <a class=" folderNameStyle btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class=" folderNameStyle btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" 
+                        aria-expanded="false">
                         {{ FolderName }}
                     </a>
 
@@ -38,13 +39,12 @@
                     </button>
                 </form>
             <div>
-                <div id="myTasks1" v-for="i, index in Tasks" :key="index">
+                <div class="align-items-center" id="myTasks1" v-for="i, index in Tasks" :key="index">
                     <div v-if="i.folder_name == FolderName">
-                        <div v-for="j,index1 in i.tasks" :key="index1" style="margin-top: 10px">
-                            <i v-if="j.showIcon" class="bi bi-check2 fa-5x" role="button" @click="j.showIcon = false"></i>
-                            <i v-else class="bi bi-pencil-fill fa-5x" role="button" @click="j.showIcon = true"></i>
+                        <div class="d-flex align-items-center" v-for="j,index1 in i.tasks" :key="index1" style="margin-top: 10px">
+                            <input type="checkbox" v-model="j.showIcon" />
                             <span class="taskName">
-                                <s v-if="!j.showIcon">
+                                <s v-if="j.showIcon">
                                     {{ j.task_name }}
                                 </s>
                                 <span v-else>{{ j.task_name }}</span>
